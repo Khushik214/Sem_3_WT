@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="">Username :</label>
+    <input type="text" id="username"/>
+    <button onclick="validate()">Sumbit</button>
+   <div id="sucessMeg" style="color: green;"></div>
+    <div id="errorMeg" style="color:red;"></div>
+
+    <label for="">password :</label>
+    <input type="password" id="password"/>
+    <button onclick="validate()">Sumbit</button>
+   <div id="sucesspass" style="color: green;"></div>
+    <div id="errorpass" style="color:red;"></div>
+
+    <label for="">re-password :</label>
+    <input type="re-password" id="re-password"/>
+    <button onclick="validate()">Sumbit</button>
+    <div id="sucessre-password" style="color: green;"></div>
+    <div id="errorre-password" style="color:red;"></div>
+
+    <label for="">enrollment no. :</label>
+    <input type="enrollment " id="enrollment "/>
+    <button onclick="validate()">Sumbit</button>
+    <div id="sucessenrollment" style="color: green;"></div>
+    <div id="errorenrollment" style="color:red;"></div>
+
+    <label for="">email :</label>
+    <input type="email" id="email"/>
+    <button onclick="validate()">Sumbit</button>
+    <div id="sucessemail" style="color: green;"></div>
+    <div id="erroremail" style="color:red;"></div>
+
+
+   
+
+
+
+
+    
+    <script>
+
+        function validate(){
+            user=document.getElementById("username").value;
+            userregex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d_]{8,}$/
+
+            if(userregex.test(user)){
+                document.getElementById("sucessMeg").innerHTML="valid username"
+                document.getElementById("errorMeg").innerHTML=""
+            }
+            else{
+                document.getElementById("errorMeg").innerHTML="invalid username"
+                document.getElementById("sucessMeg").innerHTML=""
+            }
+        
+     
+        
+            pass=document.getElementById("password").value;
+            passregex=/^[a-zA-Z0-9!@#$%^&*]{8,12}$/;
+
+            if(passregex.test(pass)){
+                document.getElementById("sucesspass").innerHTML="valid password"
+                document.getElementById("errorpass").innerHTML=""
+            }
+            else{
+                document.getElementById("errorpass").innerHTML="invalid password"
+                document.getElementById("sucesspass").innerHTML=""
+            }
+
+
+            
+            email=document.getElementById("email").value;
+            emailregex=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    
+
+            if(emailregex.test(email)){
+                document.getElementById("sucessemail").innerHTML="valid email"
+                document.getElementById("erroremail").innerHTML=""
+            }
+            else{
+                document.getElementById("erroremail").innerHTML="invalid email"
+                document.getElementById("sucessemail").innerHTML=""
+            }
+
+
+            enrollment=document.getElementById("enrollment").value;
+            enrollmentregex=/^[0-9]*\d $/
+            
+
+            if(enrollmentregex.test(enrollment)){
+                document.getElementById("sucessenrollment").innerHTML="valid enrollment"
+                document.getElementById("errorenrollment").innerHTML=""
+            }
+            else{
+                document.getElementById("errorenrollment").innerHTML="invalid enrollment"
+                document.getElementById("sucessenrollment").innerHTML=""
+            }
+
+
+
+            password=document.getElementById("re-password").value;
+             if(pass=re-pass){
+                document.getElementById("sucessre-password").innerHTML="valid re-password"
+                document.getElementById("errorre-password").innerHTML=""
+            }
+            else{
+                document.getElementById("errorre-password").innerHTML="invalid re-password"
+                document.getElementById("sucessre-password").innerHTML=""
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+        
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

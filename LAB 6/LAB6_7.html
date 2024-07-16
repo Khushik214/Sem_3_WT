@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text " id="name" placeholder="enter here">
+    <button onclick="add()">ADD</button><br>
+    <label>index</label>
+    <input type="number" id="index"><br>
+    <label>value</label>
+    <input type="text" id="val">
+    <button onclick="updatefun()">update</button>
+     <div id="output"></div>
+    <script>
+        const arr=[];
+        const add =() =>{
+             var name=document.getElementById('name');
+             arr.push(name.value);
+             name.value=" ";
+             console.log(arr);
+             display();
+        }
+           
+         function display(){
+         let a=document.getElementById("output")
+         a.innerHTML=""
+           for(i=0;i<arr.length;i++)
+           {
+           a.innerHTML+= arr[i] + `<button onclick="deletefun(${i})">DELETE</button>` +"<br/>"
+       
+           
+        }
+        }
+
+        function deletefun(){
+            ans=confirm("are you sure want to delete ")
+            if(ans)
+        {
+            arr.splice(index,1);
+            display();
+        }
+        }
+        function updatefun(){
+            index =document.getElementById('index').value
+            newvalue =document.getElementById('val')
+            if(index>=0 && index<arr.length){
+
+                arr[index.value]=newvalue.value;
+            }
+            else{
+                alert("invalid index....please enter valid index")
+            }
+
+            display();
+        }
+           
+       
+
+    </script>
+</body>
+</html>

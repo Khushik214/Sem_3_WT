@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     *{
+        box-sizing: border-box;
+     }
+     .row{
+        height:auto;
+        width:auto;
+        padding: 10px;
+     }
+        body{
+        padding-left: 550px;
+        padding-top: 150px;
+     }
+
+     input{
+        height: 35px;
+        width: 200px;
+        border: 1px solid;
+        text-align: right;
+     }
+     button{
+        height: 40px;
+        width:50px;
+        border: 1px solid;
+        font-size: 20px;
+     }
+      button:hover{
+        transform:scale(1.1);
+        border-color: black;
+        background-color: lightgoldenrodyellow;
+      }
+
+
+    
+</style>
+<body>
+    <div class="'page">
+        <div class="row">
+            <input type="text" id="display" placeholder="0">
+            <button  onclick="cleardisplay()">C</button>
+            <button onclick="removelast()">X</button>
+            </div>
+            <div class="row">
+                <button onclick="applynumber('7')">7</button>
+                <button onclick="applynumber('8')" >8</button>
+                <button onclick="applynumber('9')">9</button>
+                <button onclick="applynumber('-')" >-</button>
+                </div>
+                <div class="row">
+                    <button onclick="applynumber('4')">4</button>
+                    <button onclick="applynumber('5')">5</button>
+                    <button onclick="applynumber('6')">6</button>
+                    <button onclick="applynumber('+')">+</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="applynumber('1')">1</button>
+                        <button  onclick="applynumber('2')">2</button>
+                        <button onclick="applynumber('3')">3</button>
+                        <button onclick="applynumber('/')">/</button>
+                        </div>
+                        
+                        <div class="row">
+                            <button onclick="applynumber('0')">0</button>
+                            <button onclick="applynumber('.')">.</button>
+                            <button onclick="applynumber('*')">*</button>
+                            <button style="background-color: skyblue;" onclick="answerEqual()">=</button>
+                            </div>
+     </div>
+       <script>
+            function applynumber(ch){
+               document.getElementById("display").value +=ch;
+            }
+            function cleardisplay(){
+                document.getElementById("display").value =""
+            }
+
+            function removelast(){
+                document.getElementById("display").value =document.getElementById("display").value.slice(0, -1);
+            }
+            function answerEqual(){
+                try{
+                    document.getElementById("display").value=eval(document.getElementById("display").value)
+                }
+                catch(error){
+
+                    document.getElementById("display").value ="error"
+                }
+                
+            }
+            
+       </script>                    
+                
+    
+
+
+</body>
+</html>
